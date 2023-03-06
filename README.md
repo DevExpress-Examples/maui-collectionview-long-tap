@@ -28,7 +28,7 @@ The header area displays a list header that you can click to opens detail list.
 
 ### Behavior
 
-Follow the steps below to open the full list of items on the header click:
+Follow the steps below to open the full list of items on header click:
 
 1. Call the [Routing.RegisterRoute](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.routing.registerroute?view=net-maui-7.0#microsoft-maui-controls-routing-registerroute(system-string-system-type)) method to register the page that contains the full list of items:
 

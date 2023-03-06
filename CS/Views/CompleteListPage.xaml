@@ -13,7 +13,7 @@
         <dxc:DXCollectionView ItemsSource="{Binding ParentCard.Items}">
             <dxc:DXCollectionView.ItemTemplate>
                 <DataTemplate>
-                    <dxco:SimpleButton Padding="0" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}" CornerRadius="0" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Button_Dark_Pressed}}">
+                    <dxco:SimpleButton Padding="0" CornerRadius="0" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Button_Dark_Pressed}}">
                         <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="*,*">
                             <Image Source="{Binding Icon}" WidthRequest="40" HeightRequest="40" Grid.RowSpan="2" Margin="14"/>
                             <Label Text="{Binding Name}" TextColor="{AppThemeBinding Light={StaticResource OnSurfaceForeground}, Dark={StaticResource OnSurfaceForeground_Dark}}" FontAttributes="Bold" VerticalOptions="End" Grid.Column="1"/>

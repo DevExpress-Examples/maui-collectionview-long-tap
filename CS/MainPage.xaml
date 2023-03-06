@@ -8,20 +8,20 @@
     <ContentPage.Resources>
         <DataTemplate x:Key="innerItemTemplate">
             <Grid ColumnDefinitions="*, Auto">
-                <dxco:SimpleButton Padding="0,5" CornerRadius="10" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}" Command="{Binding Source={RelativeSource Mode=FindAncestorBindingContext, AncestorType={x:Type viewModels:Card}}, Path=ItemClickCommand}" CommandParameter="{Binding}" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Button_Light_Pressed}, Dark={StaticResource Button_Dark_Pressed}}">
+                <dxco:SimpleButton Padding="0,5" CornerRadius="10" Command="{Binding Source={RelativeSource Mode=FindAncestorBindingContext, AncestorType={x:Type viewModels:Card}}, Path=ItemClickCommand}" CommandParameter="{Binding}">
                     <Grid Grid.Column="1" ColumnDefinitions="Auto, *">
                         <Image Source="{Binding Icon}" Margin="20,0,0,0" WidthRequest="40" HeightRequest="40"/>
                         <Label Text="{Binding Name}" TextColor="{AppThemeBinding Light={StaticResource OnSurfaceForeground}, Dark={StaticResource OnSurfaceForeground_Dark}}" Margin="20,0" VerticalOptions="Center" Grid.Column="1"/>
                     </Grid>
                 </dxco:SimpleButton>
-                <dxco:SimpleButton Padding="20,0" Text="&#x2715;" Command="{Binding Source={RelativeSource Mode=FindAncestorBindingContext, AncestorType={x:Type viewModels:Card}}, Path=HideCommand}" CommandParameter="{Binding}" TextColor="{AppThemeBinding Light={StaticResource AltForeground}, Dark={StaticResource AltForeground_Dark}}" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}" FontAttributes="Bold" FontSize="12" Grid.Column="1" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Button_Light_Pressed}, Dark={StaticResource Button_Dark_Pressed}}" PressedTextColor="{AppThemeBinding Light={StaticResource AltForeground}, Dark={StaticResource AltForeground_Dark}}"/>
+                <dxco:SimpleButton Padding="20,0" Text="&#x2715;" Command="{Binding Source={RelativeSource Mode=FindAncestorBindingContext, AncestorType={x:Type viewModels:Card}}, Path=HideCommand}" CommandParameter="{Binding}" TextColor="{AppThemeBinding Light={StaticResource AltForeground}, Dark={StaticResource AltForeground_Dark}}" FontAttributes="Bold" FontSize="12" Grid.Column="1" PressedTextColor="{AppThemeBinding Light={StaticResource AltForeground}, Dark={StaticResource AltForeground_Dark}}"/>
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="cardTemplate">
             <Grid Padding="14">
                 <Border StrokeShape="RoundRectangle 20,20,20,20" StrokeThickness="0" Padding="0,0,0,20" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}">
                     <VerticalStackLayout >
-                        <dxco:SimpleButton Text="{Binding Title}" Padding="20,20,0,5" CornerRadius="20,20,0,0" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}" Command="{Binding NavigateToAllCommand}" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Button_Light_Pressed}, Dark={StaticResource Button_Dark_Pressed}}">
+                        <dxco:SimpleButton Text="{Binding Title}" Padding="20,20,0,5" CornerRadius="20,20,0,0" Command="{Binding NavigateToAllCommand}" >
                             <dxco:SimpleButton.Content>
                                 <Grid ColumnDefinitions="*,Auto" HorizontalOptions="Fill" Padding="0">
                                     <Label Text="{Binding Title}" TextColor="{AppThemeBinding Light={StaticResource OnSurfaceForeground}, Dark={StaticResource OnSurfaceForeground_Dark}}" FontAttributes="Bold" VerticalOptions="Center" FontSize="20"/>
@@ -36,7 +36,7 @@
                                     <Setter Property="IsVisible" Value="False"/>
                                 </DataTrigger>
                             </HorizontalStackLayout.Triggers>
-                            <dxco:SimpleButton Text="{Binding PrimaryActionName}" FontSize="14" Padding="24,12,24,12" Command="{Binding SecondaryActionCommand}" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Secondary}}" CornerRadius="40" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Button_Light_Pressed}, Dark={StaticResource Button_Dark_Pressed}}" PressedTextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource OnSurfaceForeground_Dark}}"/>
+                            <dxco:SimpleButton Text="{Binding PrimaryActionName}" FontSize="14" Padding="24,12,24,12" Command="{Binding SecondaryActionCommand}" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Secondary}}" CornerRadius="40" PressedTextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource OnSurfaceForeground_Dark}}"/>
                             <dxco:SimpleButton Text="{Binding SecondaryActionName}" FontSize="14" BackgroundColor="{AppThemeBinding Light={StaticResource Button_Light}, Dark={StaticResource Button_Dark}}" Command="{Binding PrimaryActionCommand}" TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Button_Dark_Foreground}}" CornerRadius="40" Padding="24,12,24,12" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Button_Light_Pressed_Primary}, Dark={StaticResource Button_Dark_Pressed_Primary}}"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>

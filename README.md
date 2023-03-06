@@ -257,8 +257,21 @@ Follow the steps below to implement commands that performs operations over all *
         }
     }
     ```
-## Files to Review
+## Files to Look At
+
+* [MainPage.xaml](CS/MainPage.xaml)
+* [CompleteListPage.xaml](CS/Views/CompleteListPage.xaml)
+* [CompleteListViewModel.cs](CS/ViewModels/CompleteListViewModel.cs)
+* [MainViewModel.cs](CS/ViewModels/MainViewModel.cs)
+* [Styles.xaml](CS/Resources/Styles/Styles.xaml)
 
 ## Documentation
 
+* [DevExpress Collection View for .NET MAUI](https://docs.devexpress.com/MAUI/403324/collection-view/index)
+* [SimpleButton.Command](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton.Command)
+* [SimpleButton.CommandParameter](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton.CommandParameter)
+
 ## More Examples
+
+* [DevExpress Collection View for .NET MAUI](https://github.com/DevExpress-Examples/maui-collection-view)
+* [DevExpress Mobile UI for .NET MAUI](https://github.com/DevExpress-Examples/maui-demo-app/)

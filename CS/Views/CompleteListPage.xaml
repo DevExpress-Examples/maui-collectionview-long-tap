@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewWithActionButtons.Views.CompleteListPage"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:viewModels="clr-namespace:CollectionViewWithActionButtons.ViewModels"
+             Title="{Binding ParentCard.Title}">
+    <ContentPage.BindingContext>
+        <viewModels:CompleteListViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <dxc:DXCollectionView ItemsSource="{Binding ParentCard.Items}">
+            <dxc:DXCollectionView.ItemTemplate>
+                <DataTemplate>
+                    <dxco:SimpleButton Padding="0" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Card_Background_Dark}}" CornerRadius="0" PressedBackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Button_Dark_Pressed}}">
+                        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="*,*">
+                            <Image Source="{Binding Icon}" WidthRequest="40" HeightRequest="40" Grid.RowSpan="2" Margin="14"/>
+                            <Label Text="{Binding Name}" TextColor="{AppThemeBinding Light={StaticResource OnSurfaceForeground}, Dark={StaticResource OnSurfaceForeground_Dark}}" FontAttributes="Bold" VerticalOptions="End" Grid.Column="1"/>
+                            <Label Text="{Binding Subtitle}" TextColor="{AppThemeBinding Light={StaticResource OnSurfaceForeground}, Dark={StaticResource OnSurfaceForeground_Dark}}" LineBreakMode="TailTruncation" VerticalOptions="Start" Grid.Column="1" Grid.Row="1"/>
+                            <Label Text="{Binding CreatedDate, StringFormat='{}{0:d}'}" TextColor="{AppThemeBinding Light={StaticResource OnSurfaceForeground}, Dark={StaticResource OnSurfaceForeground_Dark}}" VerticalTextAlignment="Center" Grid.Column="2" Grid.RowSpan="2" Margin="14,0,14,0"/>
+                        </Grid>
+                    </dxco:SimpleButton>
+                </DataTemplate>
+            </dxc:DXCollectionView.ItemTemplate>
+        </dxc:DXCollectionView>
+    </Grid>
+</ContentPage>

@@ -1,6 +1,6 @@
 # List Cards
 
-This example shows you how to use the list card to preview information from a set of related items or objects. 
+This example shows you how to implement a List Card - a UI element that allows you to preview several items from a lengthy list, access the complete list, and execute custom actions. 
 
 <img width="50%" src="https://user-images.githubusercontent.com/12169834/223110944-4904bf34-da91-4685-9656-fb7e09905d42.png"/>
 
@@ -15,6 +15,7 @@ This example shows you how to use the list card to preview information from a se
 
   * [Label](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/label?view=net-maui-7.0): [Text](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.label.text?view=net-maui-7.0)
   * [SimpleButton](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton): [Command](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton.Command), [CommandParameter](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton.CommandParameter)
+  * [CollectionView](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView): [CollectionView.ItemsSource](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.ItemsSource), [CollectionView.ItemTemplate](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.ItemTemplate)
 
 **C. Footer (optional)**
 
@@ -22,15 +23,15 @@ This example shows you how to use the list card to preview information from a se
 ## A. Header
 
 ### Anatomy
-The header area displays a list header that you can click to opens detail list.
+Users can click the header area to access the complete list.
 
 <img width="50%" src="https://user-images.githubusercontent.com/12169834/223118601-0386f5c7-fd4c-4fe1-a03d-775b5e12a9e6.png"/>
 
 ### Behavior
 
-Follow the steps below to open the full list of items on header click:
+Follow the steps below to handle header clicks and implement navigation to the screen with the complete list of items:
 
-1. Call the [Routing.RegisterRoute](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.routing.registerroute?view=net-maui-7.0#microsoft-maui-controls-routing-registerroute(system-string-system-type)) method to register the page that contains the full list of items:
+1. Call the [Routing.RegisterRoute](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.routing.registerroute?view=net-maui-7.0#microsoft-maui-controls-routing-registerroute(system-string-system-type)) method to register the page that contains the complete list of items:
 
     ```csharp
     public partial class App : Application {
@@ -84,7 +85,7 @@ Follow the steps below to open the full list of items on header click:
    namespace CollectionViewWithActionButtons.ViewModels {
        [QueryProperty(nameof(ParentCard), "Parent")]
        internal class CompleteListViewModel : INotifyPropertyChanged {
-           public Card parentCard;
+           private Card parentCard;
            public Card ParentCard {
                get { return parentCard; }
                set {
@@ -103,7 +104,7 @@ Follow the steps below to open the full list of items on header click:
 ## B. List Items
 
 
-This area contains list of items that you can open (click on it) or remove (the **✕** button on the right). 
+This area contains a list of items. You can click on an item to view its details. Click on an **✕** button to delete the corresponding item. 
 
 
 <img width="50%" src="https://user-images.githubusercontent.com/12169834/223119451-8b5fb385-590c-4707-a05d-8dbd662a23cc.png"/>
@@ -127,7 +128,7 @@ Follow the steps below to open the **CollectionView** item detailed information 
                     AncestorType={x:Type viewModels:Card}}, Path=HideCommand}" CommandParameter="{Binding}" .../>
     ```
 
-1. Define the **Card** class's **ItemClick** and **Hide** commands:
+1. Define the **ItemClick** and **Hide** commands in the **Card** class:
    
     ```csharp
     namespace CollectionViewWithActionButtons.ViewModels {
@@ -175,13 +176,13 @@ Follow the steps below to open the **CollectionView** item detailed information 
 
 ## C. Footer (Optional)
 
-The footer area includes buttons that hide or apply all the items from this group. 
+The footer area includes buttons that can initiate list-level actions (such as "Hide All"). 
 
 <img width="50%" src="https://user-images.githubusercontent.com/12169834/223119520-25279691-b6cd-4147-b3aa-8154d0b9670e.png"/>
 
 ### Behavior
 
-Buttons within the footer are visible only when the **Card** class's **AllowCommonActions** property is `true`. The **PrimaryActionName** and **SecondaryActionName** properties define button names. 
+Buttons within the footer are visible only when the **Card.AllowCommonActions** property is `true`. The **PrimaryActionName** and **SecondaryActionName** properties define button names. 
 
 The following code snippet specifies whether the **Security** card's footer buttons are visible and define their names:
 
@@ -211,9 +212,9 @@ public static class DataGenerator {
 ```
 
 
-Follow the steps below to implement commands that performs operations over all **CollectionView** items within the card:
+Follow the steps below to implement commands that process all **CollectionView** items within the card:
 
-1. Specify the [SimpleButton.Command](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton.Command) property to define the click commands for both footer buttons. These commands runs only when the 
+1. Specify the [SimpleButton.Command](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton.Command) property to define the click commands for both footer buttons.
    
     ```xaml
     <HorizontalStackLayout HorizontalOptions="End" x:Name="commonActionsPanel" Padding="20,5,20,0">
@@ -227,7 +228,7 @@ Follow the steps below to implement commands that performs operations over all *
     </HorizontalStackLayout>
     ```
 
-1. Define the **Card** class's **PrimaryAction** and **SecondaryAction** commands:
+1. Define the **Card.PrimaryAction** and **Card.SecondaryAction** commands:
 
     ```csharp
     namespace CollectionViewWithActionButtons.ViewModels {

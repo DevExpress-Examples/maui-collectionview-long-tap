@@ -30,8 +30,7 @@ You can also refer to the following YouTube video for more information on how to
 
 ## Documentation
 
-- [BottomSheet](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.BottomSheet?v=23.1)
-- [SimpleButtons](https://docs.devexpress.com/Maui/DevExpress.Maui.Controls.SimpleButton)
+- [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1)
 
 ## More Examples
 

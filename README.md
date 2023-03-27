@@ -1,6 +1,6 @@
 <!-- default badges list -->
 <!-- default badges end -->
-# Select Multiple Items within the DevExpress CollectionView for .NET MAUI
+# Select Multiple Items within the DevExpress CollectionView for .NET MAUI and the Implement Contextual Action Bar
 
 This example shows how you can use our [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event to implement a multiple item selection.
 

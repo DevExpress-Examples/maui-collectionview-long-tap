@@ -12,11 +12,10 @@ You can also refer to the following YouTube video for more information on how to
 
 ## Implementation Details
 
-* Set the [DXCollectionView.SelectionMode](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectionMode?v=23.1) property to [Multiple](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.selectionmode?view=net-maui-7.0) to enable multi-select mode.
-* Handle the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event or call the 
+* Handle the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event and set the [DXCollectionView.SelectionMode](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectionMode?v=23.1) property to [Multiple](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.selectionmode?view=net-maui-7.0) to enable multi-select mode.
 * Use the [DXCollectionView.SelectedItemTemplate](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectedItemTemplate?v=23.1) property to specify the selected item's template.
-* You can define a common part for the selected and regular items in a separate class. This example uses the ContentView's SelectableItem descendant class that contains the IsSelected property. The appearance of this class is defined in the itemBaseTemplate.
-* Define the items in the [Shell.TitleView](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/pages?view=net-maui-7.0#display-views-in-the-navigation-bar) property to display them in the application's title when the CollectionView item is selected.
+* You can create a ContentView descendant to implement common visual elements for a regular and selected templates. This example uses SelectableItem class that contains the **IsSelected** property. The appearance of this class is defined in the `itemBaseTemplate`.
+* Define custom actions for selected items in the [Shell.TitleView](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/pages?view=net-maui-7.0#display-views-in-the-navigation-bar) property to display them in the application's title when the CollectionView item is selected.
 
 ## Files to Review
 

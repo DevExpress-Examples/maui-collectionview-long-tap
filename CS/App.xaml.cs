@@ -1,19 +1,9 @@
-﻿using CollectionViewWithActionButtons.Views;
+﻿namespace CollectionViewLongTapExamp {
+    public partial class App : Application {
+        public App() {
+            InitializeComponent();
 
-namespace CollectionViewWithActionButtons;
-
-public partial class App : Application
-{
-    public App()
-    {
-        InitializeComponent();
-
-        Routing.RegisterRoute("completeList", typeof(CompleteListPage));
-        MainPage = new AppShell();
-// #if IOS
-//         ThemeLoader themeloader = new ThemeLoader();
-//         themeloader.UpdateStatusBar();
-// #endif
+            MainPage = new AppShell();
+        }
     }
 }
-

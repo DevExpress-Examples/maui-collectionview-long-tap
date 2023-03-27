@@ -1,6 +1,6 @@
 <!-- default badges list -->
 <!-- default badges end -->
-# DevExpress Bottom Sheet for .NET MAUI
+# Select Multiple Items within the DevExpress CollectionView for .NET MAUI
 
 This example shows how you can use our [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event to implement a multiple item selection.
 
@@ -12,7 +12,7 @@ You can also refer to the following YouTube video for more information on how to
 
 ## Implementation Details
 
-* Set the [DXCollectionView.SelectinoMode](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectionMode?v=23.1) property to [Multiple](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.selectionmode?view=net-maui-7.0) to enable multi-select mode.
+* Set the [DXCollectionView.SelectionMode](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectionMode?v=23.1) property to [Multiple](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.selectionmode?view=net-maui-7.0) to enable multi-select mode.
 * Handle the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event or call the 
 * Use the [DXCollectionView.SelectedItemTemplate](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectedItemTemplate?v=23.1) property to specify the selected item's template.
 * You can define a common part for the selected and regular items in a separate class. This example uses the ContentView's SelectableItem descendant class that contains the IsSelected property. The appearance of this class is defined in the itemBaseTemplate.

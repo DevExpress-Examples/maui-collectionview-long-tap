@@ -7,6 +7,8 @@
 
 This example shows how to use the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event to enable multiple item selection.
 
+<img src="https://user-images.githubusercontent.com/12169834/228822599-f34bb136-786a-4a67-b551-1524927b57ab.png" width="30%"/>
+
 ## Requirements
 
 Register the DevExpress NuGet Gallery in Visual Studio to restore NuGet packages used in this solution. See the following topic for more information: [Get Started with DevExpress Mobile UI for .NET MAUI](https://docs.devexpress.com/MAUI/403249/get-started).

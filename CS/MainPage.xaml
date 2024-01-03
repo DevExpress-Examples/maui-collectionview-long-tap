@@ -1,7 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
-    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:mmc="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
@@ -14,15 +14,15 @@
             <Grid BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}">
                 <Label x:Name="defaultTitle" Text="Inbox" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="18"/>
                 <Grid x:Name="multipleSelectionPanel" IsVisible="False" ColumnDefinitions="Auto,*,Auto,Auto,Auto">
-                    <dxco:SimpleButton BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" Text="Select all" FontSize="18" TextColor="White" Padding="5" VerticalOptions="Center" Clicked="SelectAllButtonClick"/>
+                    <dx:DXButton BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" Content="Select all" FontSize="18" TextColor="White" Padding="5" VerticalOptions="Center" Clicked="SelectAllButtonClick"/>
                     <Label x:Name="selectionLabel" TextColor="White" VerticalOptions="Center" FontSize="18" Margin="15,0,0,0" Grid.Column="1"/>
-                    <dxco:SimpleButton Grid.Column="2" Padding="0" VerticalOptions="Center" BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" MinimumWidthRequest="0" WidthRequest="34">
-                        <Image WidthRequest="24" HeightRequest="18" Source="delete" VerticalOptions="Center"/>
-                    </dxco:SimpleButton>
-                    <dxco:SimpleButton Grid.Column="3" Padding="0" VerticalOptions="Center" MinimumWidthRequest="0" WidthRequest="34" BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" Margin="15,0,15,0">
-                        <Image WidthRequest="24" HeightRequest="18" Source="archive" VerticalOptions="Center"/>
-                    </dxco:SimpleButton>
-                    <dxco:SimpleButton BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" Text="Cancel" FontSize="18" TextColor="White" Padding="5" VerticalOptions="Center" Grid.Column="4" Clicked="CancelButtonClick" Margin="0,0,10,0"/>
+                    <dx:DXButton Grid.Column="2" Padding="0" VerticalOptions="Center" BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" MinimumWidthRequest="0" WidthRequest="34">
+                        <dx:DXImage WidthRequest="24" HeightRequest="18" Source="delete" VerticalOptions="Center"/>
+                    </dx:DXButton>
+                    <dx:DXButton Grid.Column="3" Padding="0" VerticalOptions="Center" MinimumWidthRequest="0" WidthRequest="34" BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" Margin="15,0,15,0">
+                        <dx:DXImage WidthRequest="24" HeightRequest="18" Source="archive" VerticalOptions="Center"/>
+                    </dx:DXButton>
+                    <dx:DXButton BackgroundColor="{Binding Source={x:Reference rootPage}, Path=TitleAreaColor}" Content="Cancel" FontSize="18" TextColor="White" Padding="5" VerticalOptions="Center" Grid.Column="4" Clicked="CancelButtonClick" Margin="0,0,10,0"/>
                 </Grid>
             </Grid>
         </local:TitleViewFix>
@@ -30,11 +30,11 @@
     <ContentPage.Resources>
         <ControlTemplate x:Key="itemBaseTemplate">
             <Grid ColumnDefinitions="72 ,*" RowDefinitions="20,20,20, Auto" Padding="5,10,10,0" BindingContext="{TemplateBinding Path=BindingContext}">
-                <Image HeightRequest="40" WidthRequest="40" Source="{Binding SenderAvatarPath}" VerticalOptions="Center" HorizontalOptions="Center" x:Name="avatar" Grid.RowSpan="2" Margin="0,10,0,0">
-                    <Image.Clip>
+                <dx:DXImage HeightRequest="40" WidthRequest="40" Source="{Binding SenderAvatarPath}" VerticalOptions="Center" HorizontalOptions="Center" x:Name="avatar" Grid.RowSpan="2" Margin="0,10,0,0">
+                    <dx:DXImage.Clip>
                         <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
-                    </Image.Clip>
-                </Image>
+                    </dx:DXImage.Clip>
+                </dx:DXImage>
                 <Ellipse IsVisible="False" WidthRequest="40" Fill="{StaticResource Secondary}" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Center" Grid.RowSpan="2" Margin="0,10,0,0">
                     <Ellipse.Triggers>
                         <DataTrigger Binding="{TemplateBinding Path=IsSelected}" Value="True" TargetType="{x:Type Ellipse}">

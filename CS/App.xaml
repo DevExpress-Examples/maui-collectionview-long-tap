@@ -27,12 +27,6 @@
             <Color x:Key="OnSurfaceForeground">#1C1B1F</Color>
             <Color x:Key="OnSurfaceForeground_Dark">#E3E4E0</Color>
 
-            <Style TargetType="Border" x:Key="separatorStyle">
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray600}}" />
-                <Setter Property="HeightRequest" Value="2"/>
-                <Setter Property="StrokeThickness" Value="0"/>
-            </Style>
-
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray300}}" />
             </Style>

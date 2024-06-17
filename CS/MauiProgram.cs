@@ -12,6 +12,8 @@ namespace CollectionViewLongTapExamp {
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseDevExpressCollectionView()
+                .UseDevExpressControls()
                 .UseMauiCommunityToolkit()
                 .UseDevExpress(useLocalization: true)
                 .ConfigureFonts(fonts =>

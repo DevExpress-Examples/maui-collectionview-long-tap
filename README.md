@@ -6,7 +6,7 @@
 <!-- default badges end -->
 # DevExpress CollectionView for .NET MAUI - Enable Multiple Selection and Implement the Contextual Action Bar
 
-This example shows how to use the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event to enable multiple item selection.
+This example shows how to use the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress) event to enable multiple item selection.
 
 <img src="https://user-images.githubusercontent.com/12169834/228822599-f34bb136-786a-4a67-b551-1524927b57ab.png" width="30%"/>
 
@@ -18,7 +18,7 @@ You can also refer to the following YouTube video for more information on how to
 
 ## Implementation Details
 
-* Handle the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1) event and set the [DXCollectionView.SelectionMode](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectionMode?v=23.1) property to [Multiple](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.selectionmode?view=net-maui-7.0).
+* Handle the [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress) event and set the [DXCollectionView.SelectionMode](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectionMode) property to [Multiple](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.selectionmode?view=net-maui-7.0).
 * Use the [DXCollectionView.SelectedItemTemplate](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.SelectedItemTemplate?v=23.1) property to specify a template for selected items.
 * You can create a **ContentView** descendant to implement common visual elements for a regular and selected templates. This example uses the **SelectableItem** (**ContentView** descendant) class that contains the **IsSelected** property. The appearance of this class is defined in the **itemBaseTemplate**.
 * When a CollectionView item is selected, the application title displays custom actions. You can use the [Shell.TitleView](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/pages?view=net-maui-7.0#display-views-in-the-navigation-bar) property to define these actions.
@@ -35,7 +35,7 @@ You can also refer to the following YouTube video for more information on how to
 
 ## Documentation
 
-- [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress?v=23.1)
+- [DXCollectionView.LongPress](https://docs.devexpress.com/MAUI/DevExpress.Maui.CollectionView.DXCollectionView.LongPress)
 
 ## More Examples
 
